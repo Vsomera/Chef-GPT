@@ -12,10 +12,5 @@ class RecipeGetSerializer(ModelSerializer):
 class RecipeCreateSerializer(ModelSerializer):
     class Meta:
         model = Recipe
-        fields = ('profile', 'ingredients', 'recipe', 
+        fields = ('ingredients', 'recipe', 
                   'instruction', 'category')
-
-class RecipeDestroySerializer(ModelSerializer):
-    class Meta:
-        model = Recipe
-        fields = ('id',)
