@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 const Register = () => {
     const [formData, setFormData] = useState({
         username: "",

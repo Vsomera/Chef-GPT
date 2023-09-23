@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Register from './pages/Register'
+import Login from "./pages/Login"
 import './App.css'
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
 
   return (
     <>
-        <Register />
+        <Login />
+        {/* <Register /> */}
     </>
   )
 }

@@ -55,3 +55,17 @@ body {
 .register-button:hover {
   background-color: #084484;  /* A slightly darker shade on hover */
 }
+
+.login-logo {
+  max-width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+
+}
+
+.register-link {
+    margin-top: 20px;
+
+}
