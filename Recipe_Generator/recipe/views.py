@@ -9,8 +9,18 @@ class RecipeViewset(mixins.CreateModelMixin,
                     mixins.RetrieveModelMixin,
                     mixins.DestroyModelMixin,
                     viewsets.GenericViewSet):
-    queryset = Recipe.objects.all()
-    serializer_class = RecipeSerializer
+    serializers = {
+        'list': RecipeGetSerializer,
+        'retrieve': RecipeGetSerializer,
+        'create': RecipeCreateSerializer,
+        'destroy': RecipeDestroySerializer
+    }
     permission_classes = [IsAuthenticated]
     # filter_backends = (filters.SearchFilter, )
     # search_fields = ('title', 'brand')
+    
+    def get_serializer_class(self):
+        return self.serializers.get(self.action)
+    def get_queryset(self):
+        print(self.request.user.id)
+        return Recipe.objects.filter(profile=self.request.user)
