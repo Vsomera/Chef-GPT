@@ -26,6 +26,7 @@ const Register = () => {
     return (
         <div className="register-container">
             <form className="register-form" onSubmit={handleRegister}>
+            <img src="/ChefGPT-4.jpg" alt="ChefGPT-4 Logo" className="register-logo" />
                 <input 
                     className="register-input" 
                     type="text" 
@@ -59,9 +60,19 @@ const Register = () => {
                 <button className="register-button" type="submit">Register</button>
             </form>
             {
-                usernameError && <p className="error-message">{usernameError}</p>
+                usernameError && 
+                <div className="error-container">
+                    <i className="error-icon">&#9888;</i>
+                    <p className="error-message">{usernameError}</p>
+                </div>
             }
+            <div className="switch-to-login">
+                Already Have An Account? <a href="/login" className='login-link'>Sign in</a>
+            </div>
+
         </div>
+    
+
     );
 }
 
