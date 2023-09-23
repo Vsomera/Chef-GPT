@@ -1,7 +1,7 @@
 import { Request, Response, response } from "express"
 import OpenAI from "openai"
 
-const OPENAPI_KEY = "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"
+const OPENAPI_KEY = "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"
 
 const openai = new OpenAI({
     apiKey: OPENAPI_KEY
@@ -21,7 +21,14 @@ const getRecipe = async (req: Request, res: Response) => {
                     "content": `
                     Given the list of these ingredients, give me a recipe based off of Mexican Cuisine:
                         ${ingredients}
-                    `
+
+                    return nicely formatted json {
+                        title : (recipe title),
+                        indgredients: (ex. ham, cheese, lettuce)
+                        recipe : recipe
+                    }
+                    `,
+                
                 }]
             }).then(res => {
                 return res.choices[0].message.content // returns message from Chat GPT

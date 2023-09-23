@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         username: "",
         email: "",
@@ -57,7 +60,10 @@ const Register = () => {
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData(prevState => ({ ...prevState, confirmPassword: e.target.value }))}
                 />
-                <button className="register-button" type="submit">Register</button>
+                <button 
+                    className="register-button" 
+                    type="submit"
+                    onClick={() => {navigate('/')} }>Register</button>
             </form>
             {
                 usernameError && 

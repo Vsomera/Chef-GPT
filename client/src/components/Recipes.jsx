@@ -1,13 +1,18 @@
-import Recipe from "./Recipe"
+import Recipe from "./Recipe";
 
-const Recipes = () => {
-    return (
-        <>
-            <div className="recipes"> 
-                <Recipe />
-            </div>
-        </>
-    )
-}
+const Recipes = (props) => {
 
-export default Recipes
+  return (
+    <>
+      <div className="recipes">
+          <>
+            <h2>{props.recipes.title}</h2>
+            <p>{props.recipes.ingredients}</p>
+            <p>{props.recipes.recipe}</p>
+          </>
+      </div>
+    </>
+  );
+};
+
+export default Recipes;

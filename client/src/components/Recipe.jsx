@@ -1,8 +1,10 @@
-const Recipe = () => {
+const Recipe = (props) => {
     return (
-        <>
-            recipe
-        </>
+        <div key={props.key}>
+            {props.title}
+            {props.indgredients}
+            {props.instructions}
+        </div>
     )
 }
 

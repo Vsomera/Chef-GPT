@@ -2,7 +2,7 @@ import Recipes from "../components/Recipes"
 import Inputs from "../components/Inputs"
 import Sidebar from "../components/Sidebar"
 import axios from 'axios';
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 const Dashboard = () => {
@@ -13,7 +13,11 @@ const Dashboard = () => {
     const [ingredient4, setIngredient4] = useState("")
     const [ingredient5, setIngredient5] = useState("")
 
+    const [isLoading, setLoading] = useState(false)
+
     const [theme, setTheme] = useState("")
+
+    const [recipes, setRecipes] = useState({})
 
     const sendIngredients = async () => {
         const body = {
@@ -23,9 +27,12 @@ const Dashboard = () => {
         const apiURL = 'http://localhost:5000/api/openapi'
         
         if (ingredient1 && ingredient2 && ingredient3 && ingredient4 && ingredient5) {
+            setLoading(true)
             const res = await axios.post(apiURL, body)
-            console.log("req recieved")
-            console.log(res.data)
+            console.log(res.data.message)
+            setRecipes(JSON.parse(res.data.message))
+            setLoading(false)
+
         } else {
             // user needs to enter data
         }
@@ -33,9 +40,8 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-container">
-            <Sidebar />
             <div className="dashboard-main">
-                <Recipes />
+                <Recipes recipes={recipes}/>
                 <Inputs 
                     ingredient1={ingredient1}
                     setIngredient1={setIngredient1}
@@ -54,6 +60,8 @@ const Dashboard = () => {
 
                     theme={theme}
                     setTheme={setTheme}
+
+                    isLoading={isLoading}
 
                     sendIngredients={sendIngredients}
                 />
