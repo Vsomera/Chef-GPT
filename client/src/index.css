@@ -55,3 +55,52 @@ body {
 .register-button:hover {
   background-color: #084484;  /* A slightly darker shade on hover */
 }
+
+.switch-to-login {
+margin-top: 20px;
+font-size: 0.9rem;
+}
+
+.login-link {
+color: #007BFF; /* You can choose a different color if you want */
+text-decoration: none;
+margin-left: 5px;
+transition: color 0.2s;
+}
+
+.login-link:hover {
+color: #0056b3; /* A slightly darker shade on hover to give it some interaction */
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff3f3;  /* A soft red background */
+  border: 1px solid #ffc1c1;  /* Light red border */
+  border-radius: 5px;         /* Rounded corners */
+  padding: 10px 15px;
+  margin-top: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* A subtle shadow for depth */
+}
+
+.error-icon {
+  color: #ff6969; /* Red color for the warning sign */
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.error-message {
+  color: #ff6969;   /* Darker red color for text */
+  font-size: 0.9rem; /* Slightly smaller font size for aesthetic purposes */
+  margin: 0;
+  flex: 1;
+}
+
+.register-logo {
+  max-width: 200px;  /* you can adjust this value to desired width */
+  display: block;  /* this ensures the margins apply as expected */
+  margin-left: auto;  /* centers the image horizontally */
+  margin-right: auto;
+  margin-bottom: 0px;  /* negative margin to reduce the space */
+}
+
