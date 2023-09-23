@@ -1,7 +1,7 @@
 import { Request, Response, response } from "express"
 import OpenAI from "openai"
 
-const OPENAPI_KEY = "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"
+const OPENAPI_KEY = "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"
 
 const openai = new OpenAI({
     apiKey: OPENAPI_KEY
