@@ -1,69 +1,57 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Assuming Roboto is imported from Google Fonts in your HTML file or elsewhere in your CSS */
 body {
-  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1f5f9;  /* A soft, neutral background color */
+}
+
+/*Below is the register component*/
+.register-container {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.register-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;  /* Slightly increased gap */
+  padding: 24px;  /* Increased padding for better spacing */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);  /* Enhancing the shadow a bit */
+  background-color: #ffffff;  /* A pure white background */
+  border-radius: 8px;  /* Adding some border-radius */
+  transition: transform 0.2s;  /* Adding a transition for hover effect */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.register-form:hover {
+  transform: translateY(-5px);  /* Slight lift on hover */
+}
+
+.register-input {
+  padding: 12px;  /* More padding for better appearance */
+  border: 1px solid #e2e8f0;  /* A softer border color */
+  border-radius: 6px;  /* A softer border-radius */
+  transition: border-color 0.2s, box-shadow 0.2s;  /* Transition for focus state */
+}
+
+.register-input:focus {
+  border-color: #007BFF;  /* Color change on focus to match the button */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);  /* A focus ring */
+  outline: none;  /* Removing browser default focus outline */
+}
+
+.register-button {
+  padding: 12px;  /* A bit more padding */
+  background-color: #007BFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background-color 0.2s;  /* Transition for hover effect */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.register-button:hover {
+  background-color: #084484;  /* A slightly darker shade on hover */
 }
