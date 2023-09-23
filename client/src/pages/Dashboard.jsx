@@ -20,12 +20,18 @@ const Dashboard = () => {
             "ingredients" : [ingredient1, ingredient2, ingredient3, ingredient4, ingredient5]
             }
 
-        const apiURL = 'http://localhost:5000/api/openapi'
+        const openApiURL = 'http://localhost:5000/api/openapi'
+        const serverURL = "http://localhost:8000/api/v1/recipe" 
         
         if (ingredient1 && ingredient2 && ingredient3 && ingredient4 && ingredient5) {
-            const res = await axios.post(apiURL, body)
+            const recipe = await axios.post(openApiURL, body)
             console.log("req recieved")
-            console.log(res.data)
+            console.log(recipe.data)
+
+            const sendtoDB = await axios.post(serverURL, {
+                
+            })
+
         } else {
             // user needs to enter data
         }
