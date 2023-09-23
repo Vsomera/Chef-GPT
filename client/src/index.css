@@ -1,60 +1,3 @@
-/* Assuming Roboto is imported from Google Fonts in your HTML file or elsewhere in your CSS */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f1f5f9;  /* A soft, neutral background color */
-}
-
-/*Below is the register component*/
-.register-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.register-form {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;  /* Slightly increased gap */
-  padding: 24px;  /* Increased padding for better spacing */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);  /* Enhancing the shadow a bit */
-  background-color: #ffffff;  /* A pure white background */
-  border-radius: 8px;  /* Adding some border-radius */
-  transition: transform 0.2s;  /* Adding a transition for hover effect */
-}
-
-.register-form:hover {
-  transform: translateY(-5px);  /* Slight lift on hover */
-}
-
-.register-input {
-  padding: 12px;  /* More padding for better appearance */
-  border: 1px solid #e2e8f0;  /* A softer border color */
-  border-radius: 6px;  /* A softer border-radius */
-  transition: border-color 0.2s, box-shadow 0.2s;  /* Transition for focus state */
-}
-
-.register-input:focus {
-  border-color: #007BFF;  /* Color change on focus to match the button */
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);  /* A focus ring */
-  outline: none;  /* Removing browser default focus outline */
-}
-
-.register-button {
-  padding: 12px;  /* A bit more padding */
-  background-color: #007BFF;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s;  /* Transition for hover effect */
-}
-
-.register-button:hover {
-  background-color: #084484;  /* A slightly darker shade on hover */
-}
 
 .switch-to-login {
 margin-top: 20px;
@@ -104,3 +47,42 @@ color: #0056b3; /* A slightly darker shade on hover to give it some interaction 
   margin-bottom: 0px;  /* negative margin to reduce the space */
 }
 
+=======
+
+/*Dashboard Component*/
+.dashboard-container {
+  height: 100vh;
+  display: flex;
+}
+
+/*Sidebar*/
+.sidebar {
+  flex-grow: 1;
+  border-right: black 1px solid;
+}
+
+.dashboard-main {
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Recipes*/
+.recipes {
+  flex-grow: 8;
+}
+/*Inputs*/
+.inputs {
+  flex-grow: 1;
+  border-top: 1px solid black;
+}
+.submit-btn {
+  padding: 12px;  /* A bit more padding */
+  background-color: #007BFF;
+  width: 10rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s; 
+}

@@ -4,6 +4,6 @@ const router = express.Router()
 
 // @ desc  GET recipe from chatGPT API
 // @ route GEY /api/openapi
-router.get("/", aiController.getRecipe)
+router.post("/", aiController.getRecipe)
 
 module.exports = router
